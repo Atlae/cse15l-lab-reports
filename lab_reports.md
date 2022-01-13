@@ -19,4 +19,4 @@ _config.yml
 theme: jekyll-theme-midnight
 ```
 
-![HACKERMANS](https://cdn.betterttv.net/emote/5b490e73cf46791f8491f6f4/3x)
+![HACKERMANS](https://pbs.twimg.com/media/EhPPMELX0AADWNK.jpg)
