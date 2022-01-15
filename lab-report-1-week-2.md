@@ -125,4 +125,4 @@ On the topic of life hacks for CSE 15L, since you will be using the command line
 
 ***GO GET 'EM CHAMP!***
 
-![Drake Clapping GIF (pronounced with a hard g)](https://tenor.com/bbRWh.gif)
+![Drake Clapping GIF (pronounced with a hard g)](https://c.tenor.com/gAjNqkfxyGsAAAAd/drake-clapping.gif)
