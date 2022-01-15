@@ -77,6 +77,52 @@ Now run `scp {files} {SSH account}:~/`. It has almost the same functionality as 
 
 Have you noticed how every time you interact with SSH, you need to type in your password every time? That starts to get annoying fast, even though it is very secure.
 
-If you so prefer, you can indulge in a life hack called *ssh keys*. Essentially, by running a program called [`ssh-keygen`](https://en.wikipedia.org/wiki/Ssh-keygen), you create a pair of keys - one public, one private. The public is copied to the server, and the private key is stored in a secret place on the client. After setting it up, you can use the `ssh` command with these two files to authenticate to the server instead of using your password.
+If you so prefer, you can indulge in a life hack called *ssh keys*. Essentially, by running a program called [`ssh-keygen`](https://en.wikipedia.org/wiki/Ssh-keygen), you create a pair of keys - one public, one private. The public is copied to the server (using `scp`), and the private key is stored in a secret place on the client. After setting it up, you can use the `ssh` command with these two files to authenticate to the server instead of using your password.
 
 > *Note:* Windows users please consult [`ssh-add`](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation).
+
+When setting up, you can press the enter key to send an empty input, which defaults to the value in the parentheses.
+
+```shell
+# on the client (your computer)
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/{you}/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/{you}/.ssh/id_rsa.
+Your public key has been saved in /Users/{you}/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:mHqSTLqfL+DfGfBylfv4RX9flYgnRDPW6RBvBp1rmQU {you}@{your computer's name}
+The key's randomart image is:
++---[RSA 3072]----+
+|           B+E+  |
+|          o.== . |
+|           .o+=  |
+|       o .. +*. .|
+|    o o S  ooo ..|
+|  .+ = . . .o.  .|
+| ...* = .   . . o|
+|  ...B o o .   .o|
+|  .o+o+ ..o     .|
++----[SHA256]-----+
+```
+
+![SSH keys](ssh-keygen.png)
+
+On the topic of life hacks for CSE 15L, since you will be using the command line frequently:
+
+- You can run terminal commands on the remote server on your client with one line by enclosing your command in quotes.
+  - The command will be run on the remote server, then will exit the connection from the remote server.
+  - If you didn't set an SSH key like stated previously, you will need to enter your password.
+  - In order to prevent being logged out, add the command `exec bash` to the end of your command (see below for how to run multiple commands at once) and use the `-t` flag to run the shell program on the remote server.
+- In order to run multiple commands in the same line, use a semicolon `;` to delineate separate commands.
+- Use the up and down arrows to navigate through previous commands.
+
+![My one-liner](oneliner.png)
+
+> Pictured: An example one-liner copying `WhereAmI.java` to the remote server using `scp`, then compiling and running it on the remote server before logging out.
+
+***GO GET 'EM CHAMP!***
+
+![Drake Clapping GIF (pronounced with a hard g)](https://tenor.com/bbRWh.gif)
