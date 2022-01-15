@@ -1,0 +1,1 @@
+{"rule":"COMMA_COMPOUND_SENTENCE_2","sentence":"^\\QWhat's a shell and why is it remote?\\E$"}
