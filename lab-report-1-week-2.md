@@ -12,7 +12,11 @@ And that's why you should download [NordVPN](https://www.youtube.com/watch?v=iik
 
 Just kidding. What you *should* do is follow this tutorial. I'll be using Visual Studio Code [(VSCode)](https://code.visualstudio.com/) for this demonstration, although you can use any shell, terminal, or command prompt available to you at this time.
 
+## Visual Studio Code
+
 ![vscode](vscode.png)
+
+## Remote Connecting
 
 By now you should have a course-specific account on `ieng6` for CSE 15L. It's something along the line of `cse15l{quarter}{year}{random letters}@ieng6.ucsd.edu`. Check the [account lookup tool](https://sdacs.ucsd.edu/~icc/index.php) for the username of your account.
 
@@ -40,6 +44,8 @@ Your account is enclosed in square brackets, followed by a colon, the directory 
 
 ![Lab One screenshot](ssh.png)
 
+## Unix Commands
+
 Let's try out a few terminal commands while we're here.
 
 - **ls** - list files
@@ -53,6 +59,8 @@ Let's try out a few terminal commands while we're here.
 > *Note:* run `man {command}` to print out the documentation for the commands above if you need help or just curious.
 
 ![Terminal Commands](commands.png)
+
+## Moving Files from Client to Server
 
 Now that's cool and all, but why would we ever want to do this? Well, perhaps you're like me, a Windows user who is wondering if their program runs on other operating systems such as Linux. Remote accessing a computer with Linux is a great way to test your environment. In addition, SSH is also an industry standard where company code is being worked on, so learning SSH is a necessity.
 
@@ -74,6 +82,8 @@ Run `javac WhereAmI.java` and then `java WhereAmI` on your own system. It will p
 Now run `scp {files} {SSH account}:~/`. It has almost the same functionality as `cp`, which copies files to a given directory, but has SSH functionality. If you're especially astute, you may notice that we are copying to the root folder `~`. Once it finishes copying, it will automatically log back out of the server. Thus, we log back in, and run `javac WhereAmI.java` and `java WhereAmI` to print out the system information of the server. Most likely, it is different from what was printed out for the client.
 
 ![What Am I](whatami.png)
+
+## SSH Keys
 
 Have you noticed how every time you interact with SSH, you need to type in your password every time? That starts to get annoying fast, even though it is very secure.
 
@@ -110,6 +120,8 @@ The key's randomart image is:
 
 ![SSH keys](ssh-keygen.png)
 
+## Timesavers and Tips
+
 On the topic of life hacks for CSE 15L, since you will be using the command line frequently:
 
 - You can run terminal commands on the remote server on your client with one line by enclosing your command in quotes.
@@ -122,6 +134,29 @@ On the topic of life hacks for CSE 15L, since you will be using the command line
 ![My one-liner](oneliner.png)
 
 > Pictured: An example one-liner copying `WhereAmI.java` to the remote server using `scp`, then compiling and running it on the remote server before logging out.
+
+__Without optimizations:__ *111* keystrokes for *four* separate commands and entering your password in twice (which is even *more* keystrokes) each time the command is run.
+```shell
+$ scp WhereAmI.java cs15lwi22aoe@ieng6.ucsd.edu:~/
+Password:
+WhereAmI.java
+...
+
+$ ssh cs15lwi22aoe@ieng6.ucsd.edu
+Password:
+...
+
+[cs15lwi22aoe@ieng6.ucsd.edu]:~:1$ javac WhereAmI.java
+[cs15lwi22aoe@ieng6.ucsd.edu]:~:2$ java WhereAmI
+Linus | cs15lwi22aoe | /home/linux/ieng6/cs15lwi22/cs15lwi22aoe | /home/linux/ieng6/cs15lwi22aoe
+```
+
+__Optimized:__ 118 keystrokes for a one-line command without having to enter your password. After you've done it once, you can use the up-arrow *1 time* to get the previous command, thus saving time in the long run. It also gives you an immediate response after  this command, instead of having to set the files and server up every single time.
+```shell
+$ scp WhereAmI.java cs15lwi22aoe@ieng6.ucsd.edu:~/; ssh cs15lwi22aoe@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
+WhereAmI.java
+Linux | cs15lwi22aoe | /home/linux/ieng6/cs15lwi22/cs15lwi22aoe | /home/linux/ieng6/cs15lwi22aoe
+```
 
 ***GO GET 'EM CHAMP!***
 
