@@ -136,6 +136,7 @@ On the topic of life hacks for CSE 15L, since you will be using the command line
 > Pictured: An example one-liner copying `WhereAmI.java` to the remote server using `scp`, then compiling and running it on the remote server before logging out.
 
 __Without optimizations:__ *111* keystrokes for *four* separate commands and entering your password in twice (which is even *more* keystrokes) each time the command is run.
+
 ```shell
 $ scp WhereAmI.java cs15lwi22aoe@ieng6.ucsd.edu:~/
 Password:
@@ -152,6 +153,7 @@ Linus | cs15lwi22aoe | /home/linux/ieng6/cs15lwi22/cs15lwi22aoe | /home/linux/ie
 ```
 
 __Optimized:__ 118 keystrokes for a one-line command without having to enter your password. After you've done it once, you can use the up-arrow *1 time* to get the previous command, thus saving time in the long run. It also gives you an immediate response after  this command, instead of having to set the files and server up every single time.
+
 ```shell
 $ scp WhereAmI.java cs15lwi22aoe@ieng6.ucsd.edu:~/; ssh cs15lwi22aoe@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
 WhereAmI.java
