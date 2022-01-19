@@ -14,7 +14,7 @@ Just kidding. What you *should* do is follow this tutorial. I'll be using Visual
 
 ## Visual Studio Code
 
-![vscode](vscode.png)
+![vscode](images/vscode.png)
 
 ## Remote Connecting
 
@@ -42,23 +42,23 @@ The prefix in your prompt should now look like the following:
 
 Your account is enclosed in square brackets, followed by a colon, the directory you're in (currently the root directory `~`), and the number of commands you've run thus far.
 
-![Lab One screenshot](ssh.png)
+![Lab One screenshot](images/ssh.png)
 
 ## Unix Commands
 
 Let's try out a few terminal commands while we're here.
 
-- **ls** - list files
-- **pwd** - print working directory
-- **cd** {directory} - change to directory
-- **mkdir** {directory} - make directory
-- **cat** {file} - concatenate files, print to standard output
-- **cp** {file} {directory} - copy file to given directory
-- **exit**, **logout** (Ctrl+D) - logout of SSH server
+- `ls` - list files
+- `pwd` - print working directory
+- `cd {directory}` - change to directory
+- `mkdir {directory}` - make directory
+- `cat {file}` - concatenate files, print to standard output
+- `cp {file} {directory}` - copy file to given directory
+- `exit`, `logout` (Ctrl+D) - logout of SSH server
 
 > *Note:* run `man {command}` to print out the documentation for the commands above if you need help or just curious.
 
-![Terminal Commands](commands.png)
+![Terminal Commands](images/commands.png)
 
 ## Moving Files from Client to Server
 
@@ -81,7 +81,7 @@ Run `javac WhereAmI.java` and then `java WhereAmI` on your own system. It will p
 
 Now run `scp {files} {SSH account}:~/`. It has almost the same functionality as `cp`, which copies files to a given directory, but has SSH functionality. If you're especially astute, you may notice that we are copying to the root folder `~`. Once it finishes copying, it will automatically log back out of the server. Thus, we log back in, and run `javac WhereAmI.java` and `java WhereAmI` to print out the system information of the server. Most likely, it is different from what was printed out for the client.
 
-![What Am I](whatami.png)
+![What Am I](images/whatami.png)
 
 ## SSH Keys
 
@@ -118,7 +118,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-![SSH keys](ssh-keygen.png)
+![SSH keys](images/ssh-keygen.png)
 
 ## Timesavers and Tips
 
@@ -131,7 +131,7 @@ On the topic of life hacks for CSE 15L, since you will be using the command line
 - In order to run multiple commands in the same line, use a semicolon `;` to delineate separate commands.
 - Use the up and down arrows to navigate through previous commands.
 
-![My one-liner](oneliner.png)
+![My one-liner](images/oneliner.png)
 
 > Pictured: An example one-liner copying `WhereAmI.java` to the remote server using `scp`, then compiling and running it on the remote server before logging out.
 
@@ -160,4 +160,4 @@ Linux | cs15lwi22aoe | /home/linux/ieng6/cs15lwi22/cs15lwi22aoe | /home/linux/ie
 
 ***GO GET 'EM CHAMP!***
 
-[![Drake Clapping GIF (pronounced with a hard g)](https://c.tenor.com/gAjNqkfxyGsAAAAd/drake-clapping.gif)](https://www.youtube.com/watch?v=iik25wqIuFo)
+[![Drake Clapping GIF (pronounced with a hard g)](https://i.giphy.com/media/5xaOcLDE64VMF4LqqrK/giphy.webp)](https://www.youtube.com/watch?v=iik25wqIuFo)
