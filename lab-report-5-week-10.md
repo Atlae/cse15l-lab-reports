@@ -72,3 +72,10 @@ Their implementation failed to account for the space in between the closing brac
 
 [foo]
 
+(On GitHub and in VSCode Preview the markdown is not rendering, which is what I used in my explanation. However, on the website, it links to `<bar>(baz)`, which is a whole different thing altogether that I did not discuss, which I assume at this time to be the way that markdown is transpiled into HTML and rendered. For the sake of simplicity I will consider this an unintended behavior.)
+
+```html
+<p>
+    <a href="<bar>(baz)">foo</a>
+</p>
+```
