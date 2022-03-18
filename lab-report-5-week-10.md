@@ -34,6 +34,10 @@ Neither of the implementations were able to parse the file correctly; the expect
 
 Their implementation could be fixed if there was a way to keep track of the backticks. My implementation had a StringIndexOutOfBoundsException which needs a different, more fundamental fix.
 
+#### The code that could be changed
+
+![Brackets](images/brackets.png)
+
 ### What 342.md should look like
 
 [not a `link](/foo`)
@@ -65,6 +69,10 @@ test-files/201.md
 My implementation was able to parse the file correctly; the expected output was empty because the link was not properly formatted.
 
 Their implementation failed to account for the space in between the closing bracket `]` and the opening parenthesis `(`. Searching for the sequence `](` may be a better fix.
+
+#### The code that could be changed
+
+![Codeblocks](images/codeblocks.png)
 
 ### What 201.md should look like
 
